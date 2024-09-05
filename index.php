@@ -101,7 +101,6 @@ function vendas() {
 }
 
 
-
 // MENU //
 
 function menu () {
