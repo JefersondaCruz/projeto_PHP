@@ -33,8 +33,6 @@ function logar() {
 
 // Função para registrar um novo usuário
 function registrar($reg_usuario, $reg_password) {
-    
-
     global $log_usuarios; 
 
     // Verificar se o usuário já está registrado
@@ -58,9 +56,8 @@ function registrar($reg_usuario, $reg_password) {
 
     // função para deslogar
     function deslogar () {
-        
-
         global $usuario_logado;
+
         if($usuario_logado) {
             $usuario_logado = null;
             echo "Deslogado com sucesso \n";
@@ -74,7 +71,7 @@ function registrar($reg_usuario, $reg_password) {
     // FUNÇÃO DE VENDAS //
 
 function vendas() {
-    
+    system ('clear');
 
     global $log_vendas;
     $nome_produto = readline("Digite o nome do produto: ");
@@ -104,7 +101,7 @@ function vendas() {
 // MENU //
 
 function menu () {
-
+    system ('clear');
     global $usuario_logado;
 
     if($usuario_logado) {
@@ -151,7 +148,7 @@ function addLog ($log) {
 
 }
 
-// função para printar os logs
+// função para printar os LOGS
 
 function historico () {
     global $logs;
@@ -160,9 +157,10 @@ function historico () {
         print_r($hist);
     }
 
+    $file = fopen("./log.txt","w");  // TENTANDO IMPLEMENTAR PARA SALVAR O LOG NO ARQUIVO TXT
+    fwrite($file, print_r($logs, true));
+
 }
-
-
 
 
 

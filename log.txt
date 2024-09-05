@@ -1,0 +1,7 @@
+Array
+(
+    [0] => o jeferson foi cadastrado as 05/09/24 21:30:57
+ 
+    [1] => o produto maca com o preço 12.3 foi cadastrado com sucesso as 05/09/24 21:31:17!
+ 
+)
