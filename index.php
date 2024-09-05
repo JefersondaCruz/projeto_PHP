@@ -4,6 +4,7 @@
 // VARIAVEIS
 $log_usuarios = [];
 $usuario_logado = null; // nao precisar ponhar valor
+$log_vendas = [];
 
 
 
@@ -59,17 +60,18 @@ while (true) {
 
     if($usuario_logado) {
         echo "\n Você esta logado como $usuario_logado \n";
-        echo "1 - DESLOGAR \n2 - ENTRA SISTEMA DE VENDAS \n3 - Sair \n";
+        echo "1 - DESLOGAR \n2 - ENTRAR SISTEMA DE VENDAS \n3 - HISTORICO \n";
         $opcao_inicial = readline("Escolha uma opção ");
     
 
     if ($opcao_inicial == 1) {
         deslogar();
     } else if ( $Opcao_inicial == 2) {
-        echo "PUXAR FUNÇÃO DE VENDAS AQUI";
+        vendas();
         break;
     } else if ( $Opcao_inicial == 3) {
-        echo "Saindo.. \n";
+        echo " PUXAR HISTÓRICO AQUI \n";
+        break;
     } else {
         echo "comando errado";
     }
@@ -92,3 +94,19 @@ if ($Opcao_inicial == 1) {
 }
 
 }
+
+// FUNÇÃO DE VENDAS //
+
+function vendas () {
+    global $log_vendas;
+    $nome_produto = readline("Digite o nome do produto: ");
+    $preço = (float)readline("Qual o preço? ");
+
+    $log_vendas[] = ['nomeProduto' => $nome_produto,'preco'=> $preço];
+
+    echo "o produto $nome_produto com o preço $preço foi cadastrado com sucesso! ";
+
+}
+
+
+// FUNÇÃO HISTÓRICO //
